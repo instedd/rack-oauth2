@@ -5,6 +5,7 @@ describe Rack::OAuth2::AccessToken do
     Rack::OAuth2::AccessToken::Bearer.new(
       access_token: 'access_token',
       refresh_token: 'refresh_token',
+      id_token: 'id_token',
       expires_in: 3600,
       scope: [:scope1, :scope2]
     )
@@ -13,6 +14,7 @@ describe Rack::OAuth2::AccessToken do
 
   its(:access_token)  { should == 'access_token' }
   its(:refresh_token) { should == 'refresh_token' }
+  its(:id_token)      { should == 'id_token' }
   its(:expires_in)    { should == 3600 }
   its(:scope)         { should == [:scope1, :scope2] }
   its(:token_response) do
@@ -20,6 +22,7 @@ describe Rack::OAuth2::AccessToken do
       token_type: :bearer,
       access_token: 'access_token',
       refresh_token: 'refresh_token',
+      id_token: 'id_token',
       expires_in: 3600,
       scope: 'scope1 scope2'
     }

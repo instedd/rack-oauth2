@@ -29,6 +29,7 @@ describe Rack::OAuth2::AccessToken::MAC do
     should == {
       access_token: 'access_token',
       refresh_token: nil,
+      id_token: nil,
       token_type: :mac,
       expires_in: nil,
       scope: '',
